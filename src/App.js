@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import ListCustomerPage from "./pages/ListCustomerPage";
 import AddNewCustomer from "./pages/AddNewCustomerPage";
 import "bootstrap/dist/css/bootstrap.min.css"
+import CustomerContextData from "./CustomerContext";
 
 export default function App() {
   return (
@@ -24,11 +25,14 @@ export default function App() {
 
         </nav>
 
-
+        <CustomerContextData>
         <Routes>
-          <Route path="/" element={<ListCustomerPage />} />
-          <Route path="/add" element={<AddNewCustomer />} />
+         
+            <Route path="/" element={<ListCustomerPage />} />
+            <Route path="/add" element={<AddNewCustomer />} />
+          
         </Routes>
+        </CustomerContextData>
       </div>
     </Router>
   )
